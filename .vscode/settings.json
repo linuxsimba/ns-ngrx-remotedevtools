@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    "**/hooks": true,
+    "**/node_modules": true,
+    "**/platforms": true
+  }
+}
