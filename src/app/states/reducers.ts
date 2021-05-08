@@ -10,7 +10,7 @@ const _counterReducer = createReducer(initialState,
   on(counterActions.addCounter,
     (state) => ({
       ...state,
-      count: state.count++
+      count: state.count + 1
     })
   )
 );
