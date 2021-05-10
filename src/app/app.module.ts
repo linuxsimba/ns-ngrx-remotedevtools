@@ -8,12 +8,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './states/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { NativeScriptDevNgrxRemoteDevtoolModule } from 'nativescript-ngx-lib';
+import { environment } from '~/environments/environment';
 
 interface NgState {
   counter: CounterState
 }
-
-const remoteDevtoolIP = '192.168.1.104';
 
 const reducers: ActionReducerMap<NgState> = {
   counter: CounterReducer
@@ -26,7 +25,7 @@ const reducers: ActionReducerMap<NgState> = {
     EffectsModule.forRoot(([ CounterEffects ])),
     StoreDevtoolsModule.instrument({ maxAge: 25 }),
     NativeScriptDevNgrxRemoteDevtoolModule.forRoot({
-      hostname: remoteDevtoolIP,
+      hostname: environment.backendUrlHost,
       port: 8000
     })
   ],

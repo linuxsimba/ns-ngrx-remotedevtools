@@ -1,9 +1,10 @@
 <GridLayout>
-  <StackLayout>
-    <FlexboxLayout justifyContent="center" alignItems="center">
-      <Label text="Count is"></Label>
-      <Label [text]="count$ | async"></Label>
+  <StackLayout width="250" height="100">
+    <FlexboxLayout width="120" justifyContent="space-between" alignItems="center">
+      <Label class="t-20" text="Count is..."></Label>
+      <Label class="t-24" [text]="count$ | async"></Label>
     </FlexboxLayout>
+    <StackLayout class="hr"></StackLayout>
     <Button (tap)="increment()" class="-primary" text="Run NgRX Action"></Button>
   </StackLayout>
 </GridLayout>
